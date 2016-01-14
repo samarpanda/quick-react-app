@@ -14,7 +14,7 @@ function webPath(dest){
 const config = {
 	entry: [
 		webPath('scss/style.scss'),
-		webPath('client.jsx')
+		webPath('client.js')
 	],
 	output: {
 		path: process.env.NODE_ENV === 'production' ? dirPath('dist') : dirPath('build'),
@@ -26,19 +26,11 @@ const config = {
 			loader: ExtractTextPlugin.extract('style', 'css!sass')
 		},
 		{
-			test: /\.jsx$/,
-			exclude: /node_modules/,
-			loader: 'babel',
-			query: {
-				presets: ['es2015', 'react']
-			}
-		},
-		{
 			test: /\.js$/,
 			exclude: /node_modules/,
 			loader: 'babel',
 			query: {
-				presets: ['es2015']
+				presets: ['es2015', 'react']
 			}
 		}]
 	},
