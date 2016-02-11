@@ -4,7 +4,7 @@
   "description": "Quick react application setup",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core --recursive tests",
+    "test": "mocha --compilers js:babel-core/register --recursive tests",
     "start": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
     "deploy": "NODE_ENV=production webpack -p"
   },
